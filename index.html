@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semesteroppgave INFO134</title>
+  </head>
+  <body>
+
+  <!-- navigering -->
+  <div class="headerimg">
+    <header>
+      <ul class="navbar" >
+        <li onclick="showBox('Introduksjon')" class="navbutton"><a href="#1">Introduksjon</a></li>
+        <li onclick="showBox('Oversikt')" class="navbutton"><a href="#2">Oversikt</a></li>
+        <li onclick="showBox('Detaljer')" class="navbutton"><a href="#3">Detaljer</a></li>
+        <li onclick="showBox('Sammenligning')" class="navbutton"><a href="#4">Sammenligning</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <!-- fremsiden -->
+  <div class="container center">
+    <div id="Introduksjon" class="infoBox show">
+      <p>
+        Velkommen til vårt verktøy for å vise data om Norges befolkning.<p>
+        Med dette verktøyet kan du gjøre søk på befolkning, sammenligne, få flere detaljer og få oversikt.
+      <p>Dataene er hentet fra  <a href="https://www.ssb.no/">SSB sin hjemmeside</a></p>
+      <p>PS! dataene kan inneholde feil.</p>
+    </div>
+    <br>
+
+    <!-- Oversikt -->
+    <div class="infoBox hidden" id="Oversikt">
+      <br>
+      <h2>Oversikt</h2>
+      <div>
+        <p>
+        Oversikten viser alle kommunene med navn, kommunenummer, og siste
+        måling av total befolkning (“Begge kjønn”)
+        </p>
+      </div>
+
+        <table >
+          <thead>
+            <tr>
+              <th>Navn</th>
+              <th>Nummer</th>
+              <th>Befolkning 2018</th>
+            </tr>
+          </thead>
+          <tbody class="oversikt">
+          
+          </tbody>
+        </table>
+      </div>
+
+    <!-- Detaljer -->
+    <div class="infoBox hidden"  id="Detaljer">
+      <h2>Detaljer</h2>
+
+      <div>
+      <p>Her kan du gjøre søk som gir flere detaljer om en kommune.<p>
+
+      </div>
+        <div>
+          <input type="search" id="detaljer" value="" placeholder="Kommunenummer">
+          <button id="searchbtn" onclick="detaljer()">Søk</button>
+          <br>
+          <table class="detaljerTable details">
+          </table>
+        </div>
+    </div>
+
+    <!-- Sammenligning -->
+    <div class="infoBox hidden"  id="Sammenligning">
+      <h2>Sammenligning</h2>
+        <div>
+          <p> Her kan du sammenligne historisk utvikling i sysselsetting, mellom to kommuner. </p>
+          <p> Høyeste vekst i prosentpoeng vil markeres med <span class="green">grønn tekst.</span>  </p>
+        </div>
+      <div>
+        <input type="search" id="s1" placeholder="Første kommune" value="">
+        <input type="search" id="s2" placeholder="Andre kommune" value="">
+        <button id="searchbtn" onclick="visSysselsettingSammenligning(s1.value, s2.value)">Søk</button>
+        <br>
+        <div class="flex">
+        </div>
+      </div>
+      <br>
+    </div>
+
+  </div>
+
+  <footer>
+    <br><br>
+    Oppgavebesvarelse i emnet INFO134.
+  </footer>
+  </body>
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/oversikt.js"></script>
+  <script type="text/javascript" src="js/detaljer.js"></script>
+  <script type="text/javascript" src="js/sammenlign.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</html>
